@@ -25,7 +25,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "baseUrl": "src"
+    "baseUrl": "./src"
   },
   "include": ["src"]
 }
