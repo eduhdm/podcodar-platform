@@ -51,9 +51,9 @@ O objetivo do sistema é ser uma comunidade onde seus usuários podem tanto ment
 
 **Frontend**:
 
-- [Iniciar projeto do frontend com React.js e Typescript (create-react-app); (path: src/frontend/)]()
-- [Configurar ESlint/Prettier no frontend;]()
-- [Integrar Jest/Testing-library no frontend;]()
+- [Iniciar projeto do frontend com React.js e Typescript (create-react-app); (path: src/frontend/)](https://github.com/eduhdm/podcodar-platform/issues/1)
+- [Configurar ESlint/Prettier no frontend;](https://github.com/eduhdm/podcodar-platform/issues/6)
+- [Integrar Jest/Testing-library no frontend;](https://github.com/eduhdm/podcodar-platform/issues/7)
 
 **Estrutura**:
 
