@@ -45,19 +45,19 @@ O objetivo do sistema é ser uma comunidade onde seus usuários podem tanto ment
 
 **Backend**:
 
-- Iniciar projeto do backend com Express.js e Typescript (path: src/backend/)
-- Integrar conexão com PostgreSQL no backend;
-- Integrar Sequelize no backend;
+- [Iniciar projeto do backend com Express.js e Typescript (path: src/backend/)](https://github.com/eduhdm/podcodar-platform/issues/2)
+- [Integrar conexão com PostgreSQL no backend;](https://github.com/eduhdm/podcodar-platform/issues/4)
+- [Integrar Sequelize no backend;](https://github.com/eduhdm/podcodar-platform/issues/5)
 
 **Frontend**:
 
-- Iniciar projeto do frontend com React.js e Typescript (create-react-app); (path: src/frontend/)
-- Configurar ESlint/Prettier no frontend;
-- Integrar Jest/Testing-library no frontend;
+- [Iniciar projeto do frontend com React.js e Typescript (create-react-app); (path: src/frontend/)]()
+- [Configurar ESlint/Prettier no frontend;]()
+- [Integrar Jest/Testing-library no frontend;]()
 
 **Estrutura**:
 
-- Pesquisar e definir o padrão de projeto a ser usado no sistema com base na stack de tecnologias;
+- [Pesquisar e definir o padrão de projeto a ser usado no sistema com base na stack de tecnologias;](https://github.com/eduhdm/podcodar-platform/issues/8)
 
 <br>
 
@@ -65,9 +65,9 @@ O objetivo do sistema é ser uma comunidade onde seus usuários podem tanto ment
 
 <br>
 
-- Criar tela de cadastro e login no Figma (ou ferramenta de design semelhante);
-- Criar tela de login no frontend;
-- Criar tela de cadastro no frontend;
-- Criar entidade de usuário no banco e no backend (de acordo com padrão de projeto escolhido);
-- Criar API Express para cadastro de usuário (api/signup);
-- Criar API Express para login de usuário (api/login);
+- [Criar tela de cadastro e login no Figma (ou ferramenta de design semelhante);](https://github.com/eduhdm/podcodar-platform/issues/9)
+- [Criar tela de login no frontend;](https://github.com/eduhdm/podcodar-platform/issues/10)
+- [Criar tela de cadastro no frontend;](https://github.com/eduhdm/podcodar-platform/issues/11)
+- [Criar entidade de usuário no banco e no backend (de acordo com padrão de projeto escolhido);](https://github.com/eduhdm/podcodar-platform/issues/12)
+- [Criar API Express para cadastro de usuário (api/signup);](https://github.com/eduhdm/podcodar-platform/issues/13)
+- [Criar API Express para login de usuário (api/login);](https://github.com/eduhdm/podcodar-platform/issues/14)
