@@ -33,6 +33,20 @@ O objetivo do sistema é ser uma comunidade onde seus usuários podem tanto ment
     - Como mentor, quero poder aceitar ou recusar mentorandos;
     - Como mentorando, quero poder ver as atividades planejadas pelo meu mentor;
 
+# Projeto Figma:
+
+O sistema está sendo projetado usando o software Figma.
+
+## Screenshots:
+
+### LoginScreen:
+
+![Figma-LoginScreen](https://user-images.githubusercontent.com/29798601/120911049-65ab1800-c65a-11eb-9648-76ad15036f15.png)
+
+### RegisterScreen:
+
+![Figma-RegisterScreen](https://user-images.githubusercontent.com/29798601/120911052-69d73580-c65a-11eb-9a62-064ed84fd502.png)
+
 # Sprint 1
 
 ## Tarefas:
