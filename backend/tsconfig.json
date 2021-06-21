@@ -1,0 +1,21 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "types": ["jest", "node"],
+    "target": "ES2019",
+    "module": "commonjs",
+    "lib": ["es2019"],
+    "outDir": "./bin",
+    "rootDir": "src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "typeRoots": ["src/@types", "./node_modules/@types"]
+  }
+}
