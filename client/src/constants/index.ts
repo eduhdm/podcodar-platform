@@ -1,2 +1,5 @@
-// TODO: put global constants here
-export default null
+import config from './config'
+
+const constants = { config }
+
+export default constants
