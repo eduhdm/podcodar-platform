@@ -1,0 +1,7 @@
+node_modules
+dist
+bin
+src/persistence/db/models
+src/persistence/db/seeders
+src/persistence/db/config
+src/persistence/db/migrations

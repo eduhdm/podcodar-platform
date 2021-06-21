@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  postgres-db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: database_dev
+      POSTGRES_USER: database_dev
+      POSTGRES_DB: podcodar-platform
+    ports:
+      - '5432:5432'
+    container_name: postgres-db
+    # networks:
+    #   - podcodar-shared-net
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+      - STAGE=dev
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - 3000:3000
+    command: >
+      sh -c "yarn sequelize-cli db:migrate
+      && yarn sequelize-cli db:seed:all
+      && yarn dev"
+    container_name: local-podcodar-platform-server
+    depends_on:
+      - postgres-db
+    # networks:
+    #   - podcodar-shared-net
+# networks:
+#   podcodar-shared-net:
+#     external: true
