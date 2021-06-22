@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, makeStyles, Typography, Button, TextField } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
+import { signUpFirebase } from 'utils/auth'
 
 interface Props {
   className?: string
@@ -23,12 +24,13 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
   },
-  signUpDiv: {
-    margin: 10,
+  loginForm: {
     display: 'flex',
-    justifyContent: 'center',
-    fontWeight: 'bold',
-    cursor: 'pointer',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  loginFields: {
+    width: '100%',
   },
 })
 
@@ -36,22 +38,53 @@ function SignupCard({ className }: Props): JSX.Element {
   const classes = useStyles()
   const browserHistory = useHistory()
 
-  const goBack = () => {
+  const goBack = (): void => {
     browserHistory.goBack()
+  }
+
+  const validate = (elements): boolean => {
+    const { email, password, emailConfirm, passwordConfirm } = elements
+    const emailCheck = email.value === emailConfirm.value
+    const passwordCheck = password.value === passwordConfirm.value
+    if (emailCheck && passwordCheck) {
+      return true
+    }
+    return false
+  }
+
+  const register = async (event): Promise<void> => {
+    event.preventDefault()
+    if (validate(event.target.elements)) {
+      const { email, password } = event.target.elements
+      const success = await signUpFirebase(email.value, password.value)
+      if (success) {
+        alert('Usuário criado com sucesso!')
+        goBack()
+      } else {
+        alert('Usuário ou senha inválidos.')
+      }
+    }
   }
 
   return (
     <Card className={`${classes.cardDiv} ${className}`}>
       <Typography className={classes.loginTitleText}>Registrar</Typography>
-      <TextField label="Email" />
-      <TextField label="Senha" />
-      <TextField label="Confirmar Email" />
-      <TextField label="Confirmar Senha" />
-      <div className={classes.loginButtonDiv}>
-        <Button variant="contained" color="primary" onClick={goBack}>
-          Registrar
-        </Button>
-      </div>
+      <form className={classes.loginForm} onSubmit={register}>
+        <TextField className={classes.loginFields} name="email" label="Email" />
+        <TextField className={classes.loginFields} name="password" label="Senha" type="password" />
+        <TextField className={classes.loginFields} name="emailConfirm" label="Confirmar Email" />
+        <TextField
+          className={classes.loginFields}
+          name="passwordConfirm"
+          label="Confirmar Senha"
+          type="password"
+        />
+        <div className={classes.loginButtonDiv}>
+          <Button type="submit" variant="contained" color="primary">
+            Registrar
+          </Button>
+        </div>
+      </form>
     </Card>
   )
 }

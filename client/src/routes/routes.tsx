@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import { LoginPage, SignupPage, LoggedOutPage, DashboardPage } from '../pages'
 
-const Routes = () => {
+const Routes = (): JSX.Element => {
   return (
     <Switch>
       <Route path="/dashboard">
