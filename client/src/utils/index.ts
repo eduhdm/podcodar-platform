@@ -1,2 +1,1 @@
-// TODO: put global utils modules here
-export default null
+export { default } from './firebase'
