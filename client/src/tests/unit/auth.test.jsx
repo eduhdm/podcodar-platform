@@ -1,31 +1,25 @@
-import * as firebaseApp from 'utils/firebase'
+import firebaseApp from 'utils/firebase'
 import { loginFirebase, signUpFirebase } from 'utils/auth'
 
-// jest.mock('../../utils/firebase', () => ({
-//   auth: jest.fn().mockImplementation(() => ({
-//     signInWithEmailAndPassword: jest.fn(),
-//     createUserWithEmailAndPassword: jest.fn(),
-//   })),
-// }))
-
-const mockSignInWithEmailAndPassword = jest.fn()
-const mockCreateUserWithEmailAndPassword = jest.fn()
-
-firebaseApp.auth = jest.fn().mockImplementation(() => ({
-  signInWithEmailAndPassword: mockSignInWithEmailAndPassword,
-  createUserWithEmailAndPassword: mockCreateUserWithEmailAndPassword,
+jest.mock('utils/firebase', () => ({
+  auth: jest.fn(),
 }))
 
-describe('61408137', () => {
-  it('should return user', async () => {
+firebaseApp.auth.mockReturnValue({
+  signInWithEmailAndPassword: jest.fn(),
+  createUserWithEmailAndPassword: jest.fn(),
+})
+
+describe('firebase auth', () => {
+  it('loginFirebase', async () => {
     await loginFirebase('a@gmail.com', '123')
 
-    expect(mockSignInWithEmailAndPassword).toHaveBeenCalled()
+    expect(firebaseApp.auth().signInWithEmailAndPassword).toHaveBeenCalled()
   })
 
-  it('should return user', async () => {
+  it('signUpFirebase', async () => {
     await signUpFirebase('a@gmail.com', '123')
 
-    expect(mockCreateUserWithEmailAndPassword).toHaveBeenCalled()
+    expect(firebaseApp.auth().createUserWithEmailAndPassword).toHaveBeenCalled()
   })
 })
