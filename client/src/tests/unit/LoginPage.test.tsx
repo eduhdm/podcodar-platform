@@ -7,6 +7,6 @@ describe('LoginPage', () => {
   it('render app name text', () => {
     const { getByText } = render(<LoginPage />)
 
-    expect(getByText('PodCodar!')).toBeInTheDocument()
+    expect(getByText('Seja mentor e aprendiz!')).toBeInTheDocument()
   })
 })
