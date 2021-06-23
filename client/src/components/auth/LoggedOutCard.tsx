@@ -16,6 +16,7 @@ const useStyles = makeStyles({
   loginTitleText: {
     fontSize: 40,
     textAlign: 'center',
+    fontFamily: 'Quantico',
   },
   loginButtonDiv: {
     marginTop: 50,
@@ -44,7 +45,12 @@ function LoggedOutCard({ className }: Props): JSX.Element {
     <Card className={`${classes.cardDiv} ${className}`}>
       <Typography className={classes.loginTitleText}>Você saiu do sistema.</Typography>
       <div className={classes.loginButtonDiv}>
-        <Button variant="contained" color="primary" onClick={returnToRoot}>
+        <Button
+          style={{ backgroundColor: '#f76bdf', color: 'black', fontWeight: 'bold' }}
+          variant="contained"
+          color="primary"
+          onClick={returnToRoot}
+        >
           Clique para voltar à página de Login
         </Button>
       </div>
