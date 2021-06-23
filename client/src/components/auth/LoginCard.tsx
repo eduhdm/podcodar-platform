@@ -17,6 +17,7 @@ const useStyles = makeStyles({
   loginTitleText: {
     fontSize: 40,
     textAlign: 'center',
+    fontFamily: 'Quantico',
   },
   loginForm: {
     display: 'flex',
@@ -66,7 +67,11 @@ function LoginCard({ className }: Props): JSX.Element {
         <TextField className={classes.loginFields} name="email" label="Email" />
         <TextField className={classes.loginFields} name="password" label="Senha" type="password" />
         <div className={classes.loginButtonDiv}>
-          <Button type="submit" variant="contained" color="primary">
+          <Button
+            type="submit"
+            variant="contained"
+            style={{ backgroundColor: '#f76bdf', color: 'black', fontWeight: 'bold' }}
+          >
             Entrar
           </Button>
         </div>
