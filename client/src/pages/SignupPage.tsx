@@ -42,7 +42,6 @@ const useStyles = makeStyles({
     animation: '$colorFluxHeader 3s ease infinite',
   },
   pageContent: {
-    marginTop: 150,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
