@@ -17,6 +17,7 @@ const useStyles = makeStyles({
   loginTitleText: {
     fontSize: 40,
     textAlign: 'center',
+    fontFamily: 'Quantico',
   },
   loginButtonDiv: {
     marginTop: 50,
@@ -61,8 +62,10 @@ function SignupCard({ className }: Props): JSX.Element {
         alert('Usuário criado com sucesso!')
         goBack()
       } else {
-        alert('Usuário ou senha inválidos.')
+        alert('Os dados inseridos são inválidos. Não foi possível criar a conta.')
       }
+    } else {
+      alert('Certifique-se de que o email e senha confirmados sejam iguais aos originais.')
     }
   }
 
@@ -80,7 +83,11 @@ function SignupCard({ className }: Props): JSX.Element {
           type="password"
         />
         <div className={classes.loginButtonDiv}>
-          <Button type="submit" variant="contained" color="primary">
+          <Button
+            type="submit"
+            variant="contained"
+            style={{ backgroundColor: '#f76bdf', color: 'black', fontWeight: 'bold' }}
+          >
             Registrar
           </Button>
         </div>
