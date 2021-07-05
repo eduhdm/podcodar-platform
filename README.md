@@ -85,3 +85,30 @@ O sistema está sendo projetado usando o software Figma.
 - [Criar entidade de usuário no banco e no backend (de acordo com padrão de projeto escolhido);](https://github.com/eduhdm/podcodar-platform/issues/12)
 - [Criar API Express para cadastro de usuário (api/signup);](https://github.com/eduhdm/podcodar-platform/issues/13)
 - [Criar API Express para login de usuário (api/login);](https://github.com/eduhdm/podcodar-platform/issues/14)
+
+
+# Sprint 2
+
+## Histórias
+
+### Como usuário, quero criar o meu perfil como mentor
+**Tarefas:**
+- Criar entidade de mentor no banco de dados (Eduardo)
+- Criar endpoint para cadastro de informações do aprendiz (Eduardo)
+- Criar formulário que permite mentor cadastrar seu perfil (Eduardo)
+### Como usuário, quero criar o meu perfil como aprendiz
+**Tarefas:**
+- Criar entidade de aprendiz no banco de dados (Lucas)
+- Criar endpoint para cadastro de informações do aprendiz (Lucas)
+- Criar formulário que permite mentor cadastrar seu perfil (Lucas)
+### Como mentor, gostaria de cadastrar uma sprint de mentoria
+**Tarefas:**
+- Criar formulário para cadastrar exercícios (Victor)
+- Criar formulário para cadastrar recursos para serem utilizados como base (Victor)
+- Criar entidade da Sprint no bd (Victor)
+- Criar endpoint para cadastro da Sprint (Victor)
+### Como aprendiz, gostaria de ver as informações da minha sprint
+**Tarefas:**
+- Criar tela para visualizar sprint atual e exercícios (TBD)
+- Criar endpoint que retorna informações da sprint (TBD)
+- Criar endpoint para marcar exercícios como completos (TBD)
