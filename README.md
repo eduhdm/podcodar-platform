@@ -91,24 +91,31 @@ O sistema está sendo projetado usando o software Figma.
 
 ## Histórias
 
-### Como usuário, quero criar o meu perfil como mentor
+### Como usuário, quero criar o meu perfil como mentor e como aprendiz (Edu)
 **Tarefas:**
-- Criar entidade de mentor no banco de dados (Eduardo)
-- Criar endpoint para cadastro de informações do aprendiz (Eduardo)
-- Criar formulário que permite mentor cadastrar seu perfil (Eduardo)
-### Como usuário, quero criar o meu perfil como aprendiz
+- Criar entidade de usuários no banco de dados
+- Criar entidade de perfil no banco de dados
+- Criar endpoint para cadastro de informações do perfil
+- Criar endpoint para cadastro de skills que "Quero aprender"
+- Criar endpoint para cadastro de skills que "Tenho domínio"
+- Criar endpoint para listar todas essas informações do perfil e skills
+- Criar frontend para exibir perfil e permitir a alteração e o salvamento desse perfil através dos endpoints acima
+- 
+### Como aprendiz gostaria de solicitar uma mentoria (Victor)
 **Tarefas:**
-- Criar entidade de aprendiz no banco de dados (Lucas)
-- Criar endpoint para cadastro de informações do aprendiz (Lucas)
-- Criar formulário que permite mentor cadastrar seu perfil (Lucas)
-### Como mentor, gostaria de cadastrar uma sprint de mentoria
+- Adicionar menu lateral no Dashboard para as telas de "Perfil" / "Meus mentores" / "Pesquisar mentores" / "Sprints"
+- Criar endpoint para pesquisa de mentores
+- Criar endpoint para usuário solicitar ser aprendiz de outro usuário
+- Criar endpoint para listar solicitações de mentoria
+- Criar endpoint para usuário aceitar/rejeitar outro usuário como seu aprendir
+- Criar frontend para a tela de pesquisa de mentores e solicitação de mentoria
+- Criar frontend para que usuário veja, aceite ou rejeite solicitações de mentoria que recebeu
+### Como aprendiz, gostaria de ver as informações da minha sprint (Lucas)
 **Tarefas:**
-- Criar formulário para cadastrar exercícios (Victor)
-- Criar formulário para cadastrar recursos para serem utilizados como base (Victor)
-- Criar entidade da Sprint no bd (Victor)
-- Criar endpoint para cadastro da Sprint (Victor)
-### Como aprendiz, gostaria de ver as informações da minha sprint
-**Tarefas:**
-- Criar tela para visualizar sprint atual e exercícios (TBD)
-- Criar endpoint que retorna informações da sprint (TBD)
-- Criar endpoint para marcar exercícios como completos (TBD)
+- Criar formulário para cadastrar exercícios
+- Criar formulário para cadastrar recursos para serem utilizados como base
+- Criar entidade da Sprint no bd
+- Criar endpoint para cadastro da Sprint
+- Criar tela para visualizar sprint atual e exercícios
+- Criar endpoint que retorna informações da sprint
+- Criar endpoint para marcar exercícios como completos
