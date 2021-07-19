@@ -9,9 +9,7 @@ const useStyles = makeStyles({
   pageContainer: {
     width: '100vw',
     height: '100vh',
-    background: 'linear-gradient(160deg, #231d36 30%, #8243a7 100%)',
-    backgroundSize: '400% 400%',
-    animation: '$colorFluxBackground 20s ease infinite',
+    backgroundColor: 'white',
   },
   headerFirstColor: {
     display: 'flex',
@@ -41,22 +39,18 @@ const useStyles = makeStyles({
     animation: '$colorFluxHeader 3s ease infinite',
   },
   pageContent: {
-    marginTop: 150,
+    marginRight: 50,
+    marginLeft: 50,
+    padding: 25,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'white',
     fontFamily: 'Quantico',
   },
   '@keyframes upDownSlideWithOpacity': {
     '0%': { transform: 'translateY(-200%)', opacity: 0 },
     '100%': { transform: 'translateY(0%)', opacity: 1 },
-  },
-  '@keyframes colorFluxBackground': {
-    '0%': { backgroundPosition: '0% 0%' },
-    '50%': { backgroundPosition: '100% 100%' },
-    '100%': { backgroundPosition: '0% 0%' },
   },
   '@keyframes colorFluxHeader': {
     '0%': { backgroundPosition: '0% 50%' },
@@ -99,7 +93,7 @@ const DashboardPage = (): JSX.Element => {
         </div>
       </div>
       <div className={classes.pageContent}>
-        <Typography style={{ fontFamily: 'Quantico', margin: 10 }} variant="h1" component="h2">
+        <Typography style={{ fontFamily: 'Quantico' }} variant="h1" component="h2">
           Dashboard!
         </Typography>
         <Typography style={{ marginBottom: 40 }} variant="h3" component="h2">
