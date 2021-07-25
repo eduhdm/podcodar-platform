@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   WantsToLearnSkill.init(
     {
-      userId: DataTypes.INTEGER,
-      skillId: DataTypes.INTEGER,
+      user_id: DataTypes.INTEGER,
+      skill_id: DataTypes.INTEGER,
     },
     {
       sequelize,

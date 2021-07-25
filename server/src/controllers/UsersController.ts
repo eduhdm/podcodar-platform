@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { userRepository } from '../../persistence/user'
+import { userRepository } from '../persistence/repositories'
 
 async function getUsers(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
@@ -13,10 +13,10 @@ async function getUsers(req: Request, res: Response, next: NextFunction): Promis
 }
 
 async function getUserById(req: Request, res: Response, next: NextFunction): Promise<void> {
-  const { userId } = req.params
+  const { user_id } = req.params
   try {
-    const user = await userRepository.getUserById(1)
-    const userSkills = await userRepository.getUserSkills(1)
+    const user = await userRepository.getUserById(Number(user_id))
+    const userSkills = await userRepository.getUserSkills(Number(user_id))
     res.status(200).send({
       user,
       userSkills,
