@@ -1,26 +1,32 @@
 'use strict'
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('HasSkills', {
+    await queryInterface.createTable('Mentorships', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      user_id: {
+      mentor_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Users',
-          key: 'id',
-        },
       },
-      skill_id: {
+      apprentice_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Skills',
-          key: 'id',
-        },
+      },
+      accepted: {
+        type: Sequelize.BOOLEAN,
+      },
+      days_duration: {
+        type: Sequelize.INTEGER,
+      },
+      start_date: {
+        type: Sequelize.DATE,
+      },
+      end_date: {
+        type: Sequelize.DATE,
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +39,6 @@ module.exports = {
     })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('HasSkills')
+    await queryInterface.dropTable('Mentorships')
   },
 }
