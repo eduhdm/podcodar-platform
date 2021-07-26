@@ -9,15 +9,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasMany(models.HasSkill, { foreignKey: 'userId' })
-      User.hasMany(models.WantsToLearnSkill, { foreignKey: 'userId' })
+      User.hasMany(models.HasSkill, { foreignKey: 'user_id' })
+      User.hasMany(models.WantsToLearnSkill, { foreignKey: 'user_id' })
+      User.hasMany(models.Mentorship, { foreignKey: 'mentor_id', as: 'mentors' })
+      User.hasMany(models.Mentorship, { foreignKey: 'apprentice_id', as: 'apprentices' })
+      models.Mentorship.belongsTo(User, { foreignKey: 'mentor_id', as: 'mentor' })
+      models.Mentorship.belongsTo(User, { foreignKey: 'apprentice_id', as: 'apprentice' })
     }
   }
   User.init(
     {
-      firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
+      first_name: DataTypes.STRING,
+      last_name: DataTypes.STRING,
       email: DataTypes.STRING,
+      bio_description: DataTypes.STRING,
+      photo_url: DataTypes.STRING,
     },
     {
       sequelize,

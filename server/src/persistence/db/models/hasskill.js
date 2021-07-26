@@ -9,14 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      HasSkill.belongsTo(models.User, { foreignKey: 'userId' })
-      HasSkill.belongsTo(models.Skill, { foreignKey: 'skillId' })
+      HasSkill.belongsTo(models.User, { foreignKey: 'user_id' })
+      HasSkill.belongsTo(models.Skill, { foreignKey: 'skill_id' })
     }
   }
   HasSkill.init(
     {
-      userId: DataTypes.INTEGER,
-      skillId: DataTypes.INTEGER,
+      user_id: DataTypes.INTEGER,
+      skill_id: DataTypes.INTEGER,
     },
     {
       sequelize,

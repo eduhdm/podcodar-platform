@@ -32,14 +32,14 @@ module.exports = {
       'HasSkills',
       [
         {
-          userId: 1,
-          skillId: 1,
+          user_id: 1,
+          skill_id: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 1,
-          skillId: 2,
+          user_id: 1,
+          skill_id: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -49,11 +49,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('HasSkills', null, {})
+    await queryInterface.bulkDelete('Skills', null, {})
   },
 }
