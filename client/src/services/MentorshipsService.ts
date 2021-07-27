@@ -1,7 +1,3 @@
-import BaseService from './BaseService';
+import BaseService from './BaseService'
 
-export default class MentorshipService extends BaseService {
-  constructor() {
-    super();
-  }
-}
+export default class MentorshipService extends BaseService {}

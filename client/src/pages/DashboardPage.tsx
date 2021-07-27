@@ -1,5 +1,5 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
+
 import type firebase from 'firebase'
 import { useHistory } from 'react-router-dom'
 import { makeStyles, Typography, Button } from '@material-ui/core'
@@ -69,15 +69,15 @@ const DashboardPage = (): JSX.Element => {
   const classes = useStyles()
   const browserHistory = useHistory()
 
+  const getUsers = async () => {
+    const usersService = new UsersService()
+    const users = await usersService.fetchUsers()
+    console.log(`FETCHED USERS: ${JSON.stringify(users)}`)
+  }
+
   useEffect(() => {
     getUsers()
   }, [])
-
-  const getUsers = async () => {
-    const usersService = new UsersService;
-    const users = await usersService.fetchUsers();
-    console.log('FETCHED USERS: '+JSON.stringify(users));
-  }
 
   if (!auth.user) {
     browserHistory.replace('/')

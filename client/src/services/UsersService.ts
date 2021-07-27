@@ -1,15 +1,11 @@
-import { AxiosResponse } from 'axios';
-import BaseService from './BaseService';
+import { AxiosResponse } from 'axios'
+import BaseService from './BaseService'
 
 class UsersService extends BaseService {
-  constructor() {
-    super();
-  }
-
   async fetchUsers(): Promise<AxiosResponse> {
     const response = await this.client.get('users')
-    return response.data;
+    return response.data
   }
 }
 
-export default UsersService;
+export default UsersService

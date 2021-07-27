@@ -1,13 +1,12 @@
 // @flow
-import axios from 'axios'
-import { AxiosRequestConfig, AxiosPromise } from 'axios';
+import axios, { AxiosRequestConfig, AxiosPromise } from 'axios'
 
 class HttpClient {
-  _baseUri: string = "http://localhost:3001/v1/"
+  _baseUri = 'http://localhost:3001/v1/'
 
   _axios = axios.create()
 
-  token: string = '';
+  token = ''
 
   constructor() {
     this._axios.defaults.baseURL = this._baseUri

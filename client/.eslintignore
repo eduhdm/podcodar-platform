@@ -1,3 +1,4 @@
 src/serviceWorker.ts
 public/
 build/
+node_modules/
