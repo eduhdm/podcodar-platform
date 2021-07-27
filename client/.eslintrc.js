@@ -26,7 +26,8 @@ module.exports = {
       },
     },
   },
-  rules: {
+  rules: {rules: {        
+    "no-underscore-dangle": 'off',
     'jsx-a11y/anchor-is-valid': 0,
     'import/no-extraneous-dependencies': 'off',
     'react/prop-types': 'off',

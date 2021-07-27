@@ -18,5 +18,5 @@ app.use(
 app.use('/', router)
 
 app.listen(config.port, () => {
-  logger.info(`Listening on :3000`)
+  logger.info(`Listening on :3001`)
 })
