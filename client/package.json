@@ -30,7 +30,8 @@
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "firebase": "8.6.8",
-    "axios": "0.21.1"
+    "axios": "0.21.1",
+    "moment": "2.29.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",

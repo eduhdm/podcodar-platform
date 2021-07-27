@@ -29,13 +29,13 @@ function SideNavigationMenu(): JSX.Element {
       <div style={{ justifySelf: 'start', paddingBottom: 15 }}>
         <Typography
           style={{
-            fontFamily: 'Quantico',
-            fontSize: 40,
-            color: 'white',
+            fontFamily: "'Press Start 2P'",
+            fontSize: 28,
+            color: 'YELLOW',
             textAlign: 'center',
           }}
         >
-          NAVEGAÇÃO
+          PODCODAR!
         </Typography>
       </div>
       {menuRoutes.map((item) => (

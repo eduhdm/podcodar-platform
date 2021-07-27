@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react'
-
+import React from 'react'
 import type firebase from 'firebase'
 import { useHistory } from 'react-router-dom'
 import { makeStyles, Typography, Button } from '@material-ui/core'
 import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
-import { UsersService } from '../services'
 
 const useStyles = makeStyles({
   pageContainer: {
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'white',
   },
   headerFirstColor: {
     display: 'flex',
@@ -69,18 +66,8 @@ const DashboardPage = (): JSX.Element => {
   const classes = useStyles()
   const browserHistory = useHistory()
 
-  const getUsers = async () => {
-    const usersService = new UsersService()
-    const users = await usersService.fetchUsers()
-    console.log(`FETCHED USERS: ${JSON.stringify(users)}`)
-  }
-
-  useEffect(() => {
-    getUsers()
-  }, [])
-
   if (!auth.user) {
-    browserHistory.replace('/')
+    // browserHistory.replace('/')
   }
 
   const logout = (): void => {
