@@ -14,7 +14,7 @@ describe('DashboardPage', () => {
   it('render dashboard text', () => {
     const { getByText } = render(<DashboardPage />)
 
-    expect(getByText('Dashboard!')).toBeInTheDocument()
+    expect(getByText('Bem vindo à comunidade PodCodar!')).toBeInTheDocument()
   })
 
   it('render you are logged text', () => {
@@ -26,6 +26,6 @@ describe('DashboardPage', () => {
   it('render log out text', () => {
     const { getByText } = render(<DashboardPage />)
 
-    expect(getByText('Sair')).toBeInTheDocument()
+    expect(getByText('Logout')).toBeInTheDocument()
   })
 })

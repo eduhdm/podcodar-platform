@@ -115,7 +115,7 @@ const DashboardPage = (): JSX.Element => {
           style={{ backgroundColor: '#f76bdf', color: 'black', fontWeight: 'bold' }}
           onClick={logout}
         >
-          Sair
+          Logout
         </Button>
       </div>
     </div>
