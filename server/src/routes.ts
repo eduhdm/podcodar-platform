@@ -1,12 +1,18 @@
 import Router from 'express-promise-router'
-import { usersController, mentorshipController } from './controllers'
+import { usersController, mentorshipController, skillController } from './controllers'
 
 const router = Router()
 
 // Users
 router.get('/v1/users', usersController.getUsers)
-router.get('/v1/users/:user_id', usersController.getUserById)
-router.get('/v1/users/findById?user_id=:user_id', usersController.getUserById)
+router.get('/v1/users/:userId', usersController.getUserById)
+router.post('/v1/users', usersController.createUser)
+router.put('/v1/users/:userId', usersController.updateUserInfo)
+
+// Skills
+router.get('/v1/skills', skillController.getSkills)
+router.get('/v1/skills/:skillId', skillController.getSkillById)
+router.post('/v1/skills', skillController.createSkill)
 
 // Mentorships
 router.get('/v1/mentorships', mentorshipController.getMentorships)

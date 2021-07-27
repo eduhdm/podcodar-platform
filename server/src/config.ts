@@ -13,7 +13,7 @@ const configFile = stage ? configFilesByStage[stage] : configFilesByStage['dev']
 dotenv.config({ debug: true, path: path.resolve(process.cwd(), configFile) })
 
 const config = {
-  port: Number(process.env.PORT) || 3000,
+  port: Number(process.env.PORT) || 3001,
   loggerLevel: 'debug',
   db: {
     user: process.env.DB_USER || '',
