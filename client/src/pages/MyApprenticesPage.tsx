@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
-
+import React from 'react'
 import type firebase from 'firebase'
 import { useHistory } from 'react-router-dom'
-import { makeStyles, Typography, Button } from '@material-ui/core'
+import { makeStyles, Typography } from '@material-ui/core'
 import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
-import { UsersService } from '../services'
+// import assets from '../assets'
 
 const useStyles = makeStyles({
   pageContainer: {
@@ -64,27 +63,13 @@ const useStyles = makeStyles({
   },
 })
 
-const DashboardPage = (): JSX.Element => {
+const MyApprenticesPage = (): JSX.Element => {
   const auth: { user: firebase.User | null } = React.useContext(AuthContext)
   const classes = useStyles()
   const browserHistory = useHistory()
 
-  const getUsers = async () => {
-    const usersService = new UsersService()
-    const users = await usersService.fetchUsers()
-    console.log(`FETCHED USERS: ${JSON.stringify(users)}`)
-  }
-
-  useEffect(() => {
-    getUsers()
-  }, [])
-
   if (!auth.user) {
     browserHistory.replace('/')
-  }
-
-  const logout = (): void => {
-    browserHistory.push(`/loggedOut`)
   }
 
   return (
@@ -105,21 +90,11 @@ const DashboardPage = (): JSX.Element => {
       </div>
       <div className={classes.pageContent}>
         <Typography style={{ fontFamily: 'Quantico' }} variant="h1" component="h2">
-          Bem vindo à comunidade PodCodar!
+          Meus Aprendizes
         </Typography>
-        <Typography style={{ marginBottom: 40 }} variant="h3" component="h2">
-          Você está logado.
-        </Typography>
-        <Button
-          variant="contained"
-          style={{ backgroundColor: '#f76bdf', color: 'black', fontWeight: 'bold' }}
-          onClick={logout}
-        >
-          Sair
-        </Button>
       </div>
     </div>
   )
 }
 
-export default DashboardPage
+export default MyApprenticesPage

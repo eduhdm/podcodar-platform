@@ -22,11 +22,12 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ["src/", "node_modules"],
+        moduleDirectory: ['src/', 'node_modules'],
       },
     },
   },
   rules: {
+    'no-underscore-dangle': 'off',
     'jsx-a11y/anchor-is-valid': 0,
     'import/no-extraneous-dependencies': 'off',
     'react/prop-types': 'off',
@@ -48,7 +49,7 @@ module.exports = {
   env: {
     jest: true,
     node: true,
-    browser: true
+    browser: true,
   },
   globals: {
     __DEV__: true,
