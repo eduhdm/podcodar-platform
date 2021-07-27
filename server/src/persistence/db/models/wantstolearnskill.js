@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      WantsToLearnSkill.belongsTo(models.User)
+      WantsToLearnSkill.belongsTo(models.User, { foreignKey: 'user_id' })
+      WantsToLearnSkill.belongsTo(models.Skill, { foreignKey: 'skill_id' })
     }
   }
   WantsToLearnSkill.init(
