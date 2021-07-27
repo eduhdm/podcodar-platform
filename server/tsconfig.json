@@ -9,13 +9,14 @@
     "module": "commonjs",
     "lib": ["es2019"],
     "outDir": "./bin",
-    "rootDir": "src",
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "typeRoots": ["src/@types", "./node_modules/@types"]
-  }
+    "typeRoots": ["src/@types", "./node_modules/@types"],
+    "baseUrl": "./src"
+  },
+  "include": ["src"]
 }
