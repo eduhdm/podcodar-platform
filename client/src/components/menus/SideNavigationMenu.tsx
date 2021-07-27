@@ -39,7 +39,7 @@ function SideNavigationMenu(): JSX.Element {
         </Typography>
       </div>
       {menuRoutes.map((item) => (
-        <div style={{ margin: 15 }}>
+        <div key={item.route} style={{ margin: 15 }}>
           <Button
             color="primary"
             variant="contained"
