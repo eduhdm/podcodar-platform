@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.WantsToLearnSkill, { foreignKey: 'user_id' })
       User.hasMany(models.Mentorship, { foreignKey: 'mentor_id', as: 'mentors' })
       User.hasMany(models.Mentorship, { foreignKey: 'apprentice_id', as: 'apprentices' })
-      models.Mentorship.belongsTo(User, { foreignKey: 'mentor_id', as: 'mentor' })
-      models.Mentorship.belongsTo(User, { foreignKey: 'apprentice_id', as: 'apprentice' })
     }
   }
   User.init(
