@@ -1,10 +1,11 @@
 import React from 'react'
+import { useEffect } from 'react'
 import type firebase from 'firebase'
 import { useHistory } from 'react-router-dom'
 import { makeStyles, Typography, Button } from '@material-ui/core'
 import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
-// import assets from '../assets'
+import { UsersService } from '../services'
 
 const useStyles = makeStyles({
   pageContainer: {
@@ -67,6 +68,16 @@ const DashboardPage = (): JSX.Element => {
   const auth: { user: firebase.User | null } = React.useContext(AuthContext)
   const classes = useStyles()
   const browserHistory = useHistory()
+
+  useEffect(() => {
+    getUsers()
+  }, [])
+
+  const getUsers = async () => {
+    const usersService = new UsersService;
+    const users = await usersService.fetchUsers();
+    console.log('FETCHED USERS: '+JSON.stringify(users));
+  }
 
   if (!auth.user) {
     browserHistory.replace('/')
