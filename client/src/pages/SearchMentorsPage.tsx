@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import { makeStyles, Typography } from '@material-ui/core'
 import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
-// import assets from '../assets'
 
 const useStyles = makeStyles({
   pageContainer: {
