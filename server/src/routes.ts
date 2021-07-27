@@ -15,6 +15,8 @@ router.get('/v1/skills/:skillId', skillController.getSkillById)
 router.post('/v1/skills', skillController.createSkill)
 
 // Mentorships
+router.post('/v1/mentorships', mentorshipController.createMentorship)
+router.put('/v1/mentorships/:mentorship_id/accept', mentorshipController.acceptMentorship)
 router.get('/v1/mentorships', mentorshipController.getMentorships)
 router.get('/v1/mentorships/:mentorship_id', mentorshipController.getMentorshipById)
 router.get('/v1/mentorships/findById/:mentorship_id', mentorshipController.getMentorshipById)
