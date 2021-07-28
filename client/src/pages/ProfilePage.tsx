@@ -5,12 +5,13 @@ import { makeStyles, Typography } from '@material-ui/core'
 import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
 // import assets from '../assets'
+import Profile from '../components/Profile'
 
 const useStyles = makeStyles({
   pageContainer: {
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'white',
+    backgroundColor: '#f1f1f1',
   },
   headerFirstColor: {
     display: 'flex',
@@ -92,6 +93,7 @@ const ProfilePage = (): JSX.Element => {
         <Typography style={{ fontFamily: 'Quantico' }} variant="h1" component="h2">
           Perfil
         </Typography>
+        <Profile />
       </div>
     </div>
   )

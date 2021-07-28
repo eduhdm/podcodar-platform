@@ -29,6 +29,12 @@ const getUsers = async (options: any): Promise<User[]> => {
   return users.map((u: any) => u.dataValues).map(parseUserAndSkills)
 }
 
+const getUserByToken = async (token: string, options: any): Promise<Model<User>> => {
+  const users = await db.User.findAll(getQueryByOptions(options, { where: { token } }))
+
+  return users.map((u: any) => u.dataValues).map(parseUserAndSkills)[0]
+}
+
 const getUserById = async (id: number, options: any): Promise<Model<User>> => {
   const users = await db.User.findAll(getQueryByOptions(options, { where: { id } }))
 
@@ -51,4 +57,4 @@ const updateUserInfo = async (userModelInfo: User): Promise<void> => {
   })
 }
 
-export { getUsers, getUserById, createUser, updateUserInfo }
+export { getUsers, getUserById, createUser, updateUserInfo, getUserByToken }

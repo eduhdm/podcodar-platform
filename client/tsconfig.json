@@ -25,7 +25,14 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "types": []
   },
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts"
+  ],
   "include": ["src"]
 }

@@ -29,6 +29,21 @@ async function getUserById(req: Request, res: Response, next: NextFunction): Pro
   next()
 }
 
+async function getUserByToken(req: Request, res: Response, next: NextFunction): Promise<void> {
+  const { token } = req.params
+  const { includeSkills } = req.query
+
+  try {
+    const user = await userRepository.getUserByToken(token, { includeSkills })
+    res.status(200).send(user)
+  } catch (error) {
+    console.log(error)
+    res.status(500).send()
+  }
+
+  next()
+}
+
 async function createUser(req: Request, res: Response, next: NextFunction): Promise<void> {
   const { accountData } = req.body
 
@@ -58,4 +73,4 @@ async function updateUserInfo(req: Request, res: Response, next: NextFunction): 
   next()
 }
 
-export { getUsers, getUserById, createUser, updateUserInfo }
+export { getUsers, getUserById, createUser, updateUserInfo, getUserByToken }
