@@ -1,4 +1,4 @@
-import { Card, IconButton, makeStyles, Typography } from '@material-ui/core'
+import { Avatar, Card, IconButton, makeStyles, Typography } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import React from 'react'
 
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     padding: 20,
     position: 'relative',
     height: 200,
-    backgroundColor: '#65A187',
+    backgroundColor: '#5D417A',
     width: '100%',
     fontSize: 16,
     display: 'flex',
@@ -58,20 +58,36 @@ const useStyles = makeStyles({
 
 function ProfileInfo({ userInfo, toggleEditMode }: Props) {
   const classes = useStyles()
-  const { first_name, last_name, bio_description, has_skills, wants_to_learn_skills } = userInfo
+  const {
+    id: userId,
+    first_name,
+    last_name,
+    bio_description,
+    has_skills,
+    wants_to_learn_skills,
+  } = userInfo
 
   return (
     <div className={classes.container}>
-      <Card color="#65A187" className={classes.card}>
-        <div className={classes.circle}>
-          {first_name[0].toUpperCase()}
-          {last_name[0].toUpperCase()}
-        </div>
+      <Card color="#5D417A" className={classes.card}>
+        <Avatar
+          style={{
+            height: 150,
+            width: 150,
+            backgroundColor: '#855fad',
+            position: 'absolute',
+            left: 50,
+            bottom: -60,
+            zIndex: 2,
+          }}
+          alt={`${first_name} ${last_name}`}
+          src={`https://robohash.org/${userId}`}
+        />
         <IconButton onClick={toggleEditMode} className={classes.editButton} aria-label="edit">
           <EditIcon />
         </IconButton>
         <Typography
-          style={{ fontFamily: 'Quantico', paddingLeft: 250 }}
+          style={{ fontFamily: "'Press Start 2P'", paddingLeft: 250, color: 'white' }}
           variant="h4"
           component="h4"
         >

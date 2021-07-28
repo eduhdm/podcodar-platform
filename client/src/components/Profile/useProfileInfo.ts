@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { SkillService, UsersService } from 'services'
 import { useAuthProvider } from '../auth/AuthProvider'
 
-const useProfileInfo = (): any => {
+const useProfileInfo = (callback: any = null): any => {
   const { user } = useAuthProvider()
   const options = { includeSkills: true }
   const [userInfo, setUserInfo] = useState({} as any)
@@ -24,6 +24,9 @@ const useProfileInfo = (): any => {
       .getUserByToken(user?.uid, options)
       .then((userApi) => {
         setUserInfo(userApi)
+        if (callback) {
+          callback(userApi)
+        }
       })
   }
 

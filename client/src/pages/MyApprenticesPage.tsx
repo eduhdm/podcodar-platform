@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import type firebase from 'firebase'
 import moment from 'moment'
@@ -10,8 +10,10 @@ import { MentorshipsService } from 'services'
 
 import { getNomeCompleto, getSkills } from './utils'
 
+import useProfileInfo from '../components/Profile/useProfileInfo'
+
 // CONSTANT FOR TESTING PURPOSES
-const LOGGED_USER_ID = 1
+let LOGGED_USER_ID = 1
 
 const useStyles = makeStyles({
   pageContainer: {
@@ -77,12 +79,14 @@ const SearchMentorsPage = (): JSX.Element => {
   const getMyMentorships = async (): Promise<void> => {
     const fetchedMentorships = await mentorshipsService.fetchMentorshipByMentorId(LOGGED_USER_ID)
     setMentorships(fetchedMentorships)
-    console.log(`FETCHED MENTORSHIPS: ${JSON.stringify(fetchedMentorships)}`)
   }
 
-  useEffect(() => {
-    getMyMentorships()
-  }, [])
+  const loadData = async (loggedUser): Promise<void> => {
+    LOGGED_USER_ID = loggedUser.id
+    await getMyMentorships()
+  }
+
+  useProfileInfo((userInfo) => loadData(userInfo))
 
   const auth: { user: firebase.User | null } = React.useContext(AuthContext)
   const classes = useStyles()

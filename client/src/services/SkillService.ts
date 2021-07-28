@@ -5,8 +5,6 @@ class SkillService extends BaseService {
 
   async getSkills(): Promise<any> {
     const response = await this.client.get('skills')
-
-    console.log(response.data)
     return response.data
   }
 

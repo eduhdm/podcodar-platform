@@ -9,11 +9,11 @@ const getSkills = (user: any): string => {
   return user.HasSkills.map((hasSkill) => `\n - ${hasSkill.Skill.name}`).join('')
 }
 
-const hasUser = (user: any): boolean => {
+const validUser = (user: any): boolean => {
   if (!user.id || !user.first_name) {
     return false
   }
   return true
 }
 
-export { getNomeCompleto, getSkills, hasUser }
+export { getNomeCompleto, getSkills, validUser }
