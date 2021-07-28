@@ -3,10 +3,10 @@ const getNomeCompleto = (user: any): string => {
 }
 
 const getSkills = (user: any): string => {
-  if (!user.has_skills.length) {
+  if (!user.HasSkills || !user.HasSkills.length) {
     return '- Nenhum ainda...'
   }
-  return user.has_skills.map((skill) => `\n - ${skill.name}`).join('')
+  return user.HasSkills.map((hasSkill) => `\n - ${hasSkill.Skill.name}`).join('')
 }
 
 const hasUser = (user: any): boolean => {
