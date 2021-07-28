@@ -15,6 +15,7 @@ const useStyles = makeStyles({
   pageContainer: {
     width: '100vw',
     height: '100vh',
+    backgroundColor: '#f1f1f1',
   },
   headerFirstColor: {
     display: 'flex',

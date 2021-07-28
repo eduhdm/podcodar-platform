@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import type firebase from 'firebase'
 import firebaseApp from 'utils'
 
@@ -15,3 +15,5 @@ export const AuthProvider = ({ children }): JSX.Element => {
 
   return <AuthContext.Provider value={currentUser}>{children}</AuthContext.Provider>
 }
+
+export const useAuthProvider = () => useContext(AuthContext)

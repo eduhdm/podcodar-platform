@@ -1,6 +1,6 @@
 import firebaseApp from './firebase'
 
-export async function loginFirebase(email: string, password: string): Promise<boolean> {
+export async function loginFirebase(email: string, password: string): Promise<any> {
   try {
     await firebaseApp.auth().signInWithEmailAndPassword(email, password)
     return true
@@ -11,10 +11,10 @@ export async function loginFirebase(email: string, password: string): Promise<bo
   }
 }
 
-export async function signUpFirebase(email: string, password: string): Promise<boolean> {
+export async function signUpFirebase(email: string, password: string): Promise<any> {
   try {
-    await firebaseApp.auth().createUserWithEmailAndPassword(email, password)
-    return true
+    const userCredential = await firebaseApp.auth().createUserWithEmailAndPassword(email, password)
+    return userCredential
   } catch (error) {
     console.log('Error during Firebase SDK Authentication.')
     console.error(error)

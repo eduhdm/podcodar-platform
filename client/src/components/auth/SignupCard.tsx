@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, makeStyles, Typography, Button, TextField } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
-import { signUpFirebase } from 'utils/auth'
+import UsersService from '../../services/UsersService'
 
 interface Props {
   className?: string
@@ -55,9 +55,14 @@ function SignupCard({ className }: Props): JSX.Element {
 
   const register = async (event): Promise<void> => {
     event.preventDefault()
+
     if (validate(event.target.elements)) {
       const { email, password } = event.target.elements
-      const success = await signUpFirebase(email.value, password.value)
+
+      const success = await UsersService.getInstance().createUser({
+        email: email.value,
+        password: password.value,
+      })
       if (success) {
         alert('Usuário criado com sucesso!')
         goBack()
