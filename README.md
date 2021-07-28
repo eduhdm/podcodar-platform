@@ -91,7 +91,9 @@ O sistema está sendo projetado usando o software Figma.
 
 ## Histórias
 
-### Como usuário, quero criar o meu perfil como mentor e como aprendiz (Edu)
+### Como usuário, quero criar o meu perfil (Edu)
+### Como usuário, quero anunciar minhas skills (Edu)
+### Como usuário, quero anunciar as skills que desejo aprender (Edu)
 **Tarefas:**
 - Criar entidade de usuários no banco de dados
 - Criar entidade de perfil no banco de dados
@@ -101,7 +103,10 @@ O sistema está sendo projetado usando o software Figma.
 - Criar endpoint para listar todas essas informações do perfil e skills
 - Criar frontend para exibir perfil e permitir a alteração e o salvamento desse perfil através dos endpoints acima
 - 
-### Como aprendiz gostaria de solicitar uma mentoria (Victor)
+
+### Como usuário, quero poder pesquisar mentores (Victor)
+### Como usuário, quero poder pedir mentoria a mentores (Victor)
+### Como mentor, quero poder aceitar ou recusar mentorandos (Victor)
 **Tarefas:**
 - Adicionar menu lateral no Dashboard para as telas de "Perfil" / "Meus mentores" / "Pesquisar mentores" / "Sprints"
 - Criar endpoint para pesquisa de mentores
@@ -110,6 +115,8 @@ O sistema está sendo projetado usando o software Figma.
 - Criar endpoint para usuário aceitar/rejeitar outro usuário como seu aprendir
 - Criar frontend para a tela de pesquisa de mentores e solicitação de mentoria
 - Criar frontend para que usuário veja, aceite ou rejeite solicitações de mentoria que recebeu
+### Como mentor, gostaria de adicionar sprints para as minhas mentorias (Lucas)
+### Como mentor, gostaria de adicionar atividades para as minhas atividades (Lucas)
 ### Como aprendiz, gostaria de ver as informações da minha sprint (Lucas)
 **Tarefas:**
 - Criar formulário para cadastrar exercícios
