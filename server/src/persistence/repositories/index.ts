@@ -1,3 +1,5 @@
 export * as userRepository from './UserRepository'
 export * as mentorshipRepository from './MentorshipRepository'
 export * as skillRepository from './SkillRepository'
+export * as sprintRepository from './SprintRepository'
+export * as activityRepository from './ActivityRepository'

@@ -1,5 +1,11 @@
 import Router from 'express-promise-router'
-import { usersController, mentorshipController, skillController } from './controllers'
+import {
+  usersController,
+  mentorshipController,
+  skillController,
+  sprintController,
+  activityController,
+} from './controllers'
 
 const router = Router()
 
@@ -28,5 +34,20 @@ router.get(
   '/v1/mentorships/findByApprenticeId/:apprentice_id',
   mentorshipController.getMentorshipByApprenticeId
 )
+
+// Sprints
+router.get('/v1/sprints/:sprint_id', sprintController.getSprintById)
+router.post('/v1/sprints', sprintController.createSprint)
+router.get('/v1/sprints/findByMentorId/:mentor_id', sprintController.getSprintByMentorId)
+router.get(
+  '/v1/sprints/findByApprenticeId/:apprentice_id',
+  sprintController.getSprintByApprenticeId
+)
+
+// Activity
+router.post('/v1/activities', activityController.createActivity)
+router.get('/v1/activities/:activity_id', activityController.getActivityById)
+router.put('/v1/activities/:activity_id/toggle', activityController.toggleActivityStatus)
+router.get('/v1/activities/findBySprintId/:sprint_id', activityController.getActivityBySprintId)
 
 export { router }

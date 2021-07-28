@@ -1,3 +1,5 @@
 export * as usersController from './UsersController'
 export * as mentorshipController from './MentorshipController'
 export * as skillController from './SkillController'
+export * as sprintController from './SprintController'
+export * as activityController from './ActivityController'
