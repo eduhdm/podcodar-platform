@@ -5,9 +5,10 @@ const router = Router()
 
 // Users
 router.get('/v1/users', usersController.getUsers)
-router.get('/v1/users/:userId', usersController.getUserById)
+router.get('/v1/users/:userId(\\d+)', usersController.getUserById)
+router.get('/v1/users/:token', usersController.getUserByToken)
 router.post('/v1/users', usersController.createUser)
-router.put('/v1/users/:userId', usersController.updateUserInfo)
+router.put('/v1/users/:userId(\\d+)', usersController.updateUserInfo)
 
 // Skills
 router.get('/v1/skills', skillController.getSkills)
