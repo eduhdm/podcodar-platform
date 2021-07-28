@@ -14,6 +14,7 @@ function BaseField(props: Props) {
 
   const renderField = ({ field, fieldState: { error } }: any): ReactElement => (
     <Component
+      data-testid={`ProfileForm-${name}`}
       error={Boolean(error?.message)}
       helperText={error?.message ?? ''}
       fullWidth

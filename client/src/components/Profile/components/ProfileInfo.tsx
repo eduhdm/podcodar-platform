@@ -68,7 +68,7 @@ function ProfileInfo({ userInfo, toggleEditMode }: Props) {
           {last_name[0].toUpperCase()}
         </div>
         <IconButton onClick={toggleEditMode} className={classes.editButton} aria-label="edit">
-          <EditIcon />
+          <EditIcon data-testid="ProfileInfo-EditIcon" />
         </IconButton>
         <Typography
           style={{ fontFamily: 'Quantico', paddingLeft: 250 }}
