@@ -24,11 +24,12 @@ const useStyles = makeStyles({
 })
 
 function ProfileForm({ userInfo, onSubmit, skills, toggleEditMode }: Props): JSX.Element {
+  console.log({ userInfo, onSubmit, skills, toggleEditMode })
   const methods = useForm()
   const { handleSubmit } = methods
 
   const transformSkillToOptions = (skillsList) => {
-    return skillsList.map(({ id, name }) => ({ value: id, label: name }))
+    return skillsList?.map(({ id, name }) => ({ value: id, label: name }))
   }
   const classes = useStyles()
   const skillsOptions = transformSkillToOptions(skills)

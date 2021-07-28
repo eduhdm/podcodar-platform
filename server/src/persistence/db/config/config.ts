@@ -11,8 +11,8 @@ module.exports = {
     username: 'database_dev',
     password: 'database_dev',
     database: 'podcodar-platform',
-    host: 'postgres-db',
-    port: 5432,
+    host: 'postgres-db-test',
+    port: 5430,
     dialect: 'postgres',
   },
   production: {

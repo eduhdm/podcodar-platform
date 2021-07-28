@@ -16,3 +16,5 @@ app.use('/', router)
 app.listen(config.port, () => {
   logger.info(`Listening on :${config.port}`)
 })
+
+export { app }

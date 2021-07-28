@@ -1,32 +1,32 @@
 version: '3.7'
 
 services:
-  postgres-db:
+  postgres-db-test:
     image: postgres
     environment:
       POSTGRES_PASSWORD: database_dev
       POSTGRES_USER: database_dev
       POSTGRES_DB: podcodar-platform
+      PGPORT: 5430
     ports:
-      - 5432:5432
-    container_name: postgres-db
+      - 5430:5430
+    container_name: postgres-db-test
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      - NODE_ENV=development
-      - STAGE=dev
+      - NODE_ENV=test
+      - STAGE=test
     volumes:
       - .:/app
       - ./node_modules:/app/node_modules
     ports:
       - 3001:3001
     command: >
-      sh -c "yarn sequelize-cli db:migrate
-      && yarn sequelize-cli db:seed:all
+      sh -c "NODE_ENV=test STAGE=test yarn sequelize-cli db:migrate
       && yarn run:watch"
-    container_name: podcodar-app
+    container_name: podcodar-app-test
     depends_on:
-      - postgres-db
+      - postgres-db-test

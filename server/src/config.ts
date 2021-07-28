@@ -5,6 +5,7 @@ declare type Stage = 'dev'
 
 const configFilesByStage = {
   dev: '.env.dev',
+  test: '.env.test',
 }
 
 const stage = (process.env.STAGE ?? '') as Stage
