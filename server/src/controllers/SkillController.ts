@@ -31,7 +31,7 @@ async function createSkill(req: Request, res: Response, next: NextFunction): Pro
 
   try {
     const skill = await skillRepository.createSkill(skillName)
-    res.status(200).send({ skill })
+    res.status(200).send(skill)
   } catch (error) {
     console.log(error)
     res.status(500).send()
