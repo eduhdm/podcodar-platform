@@ -8,6 +8,8 @@ import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
 import { UsersService, MentorshipsService } from 'services'
 
+import { getNomeCompleto, getSkills, hasUser } from './utils'
+
 // CONSTANT FOR TESTING PURPOSES
 const LOGGED_USER_ID = 1
 
@@ -121,17 +123,6 @@ const SearchMentorsPage = (): JSX.Element => {
     getMentorships()
   }
 
-  const getNomeCompleto = (user: any): string => {
-    return `${user.first_name} ${user.last_name}`
-  }
-
-  const getSkills = (user: any): string => {
-    if (!user.has_skills.length) {
-      return '- Nenhum ainda...'
-    }
-    return user.has_skills.map((skill) => `\n - ${skill.name}`).join('')
-  }
-
   const filteredUsers = (): Array<any> => {
     return users.filter((user) => {
       if (user.id === LOGGED_USER_ID) {
@@ -180,7 +171,7 @@ const SearchMentorsPage = (): JSX.Element => {
         <div style={{ width: '90%', marginTop: 80 }}>
           <Grid container spacing={8} style={{ backgroundColor: '#855fad', alignSelf: 'center' }}>
             {filteredUsers().map((user) => {
-              if (!user.id || !user.first_name) {
+              if (hasUser(user)) {
                 return null
               }
               return (

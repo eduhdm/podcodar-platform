@@ -8,6 +8,8 @@ import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
 import { MentorshipsService } from 'services'
 
+import { getNomeCompleto, getSkills } from './utils'
+
 // CONSTANT FOR TESTING PURPOSES
 const LOGGED_USER_ID = 1
 
@@ -89,17 +91,6 @@ const SearchMentorsPage = (): JSX.Element => {
 
   if (!auth.user) {
     browserHistory.replace('/')
-  }
-
-  const getNomeCompleto = (user: any): string => {
-    return `${user.first_name} ${user.last_name}`
-  }
-
-  const getSkills = (user: any): string => {
-    if (!user.HasSkills || !user.HasSkills.length) {
-      return '- Nenhum ainda...'
-    }
-    return user.HasSkills.map((hasSkill) => `\n - ${hasSkill.Skill.name}`).join('')
   }
 
   return (
