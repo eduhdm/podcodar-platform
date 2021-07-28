@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import type firebase from 'firebase'
 import _ from 'lodash'
@@ -8,10 +8,12 @@ import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
 import { UsersService, MentorshipsService } from 'services'
 
-import { getNomeCompleto, hasUser } from './utils'
+import { getNomeCompleto, validUser } from './utils'
+
+import useProfileInfo from '../components/Profile/useProfileInfo'
 
 // CONSTANT FOR TESTING PURPOSES
-const LOGGED_USER_ID = 1
+let LOGGED_USER_ID = 1
 
 const useStyles = makeStyles({
   pageContainer: {
@@ -87,10 +89,13 @@ const SearchMentorsPage = (): JSX.Element => {
     setMentorships(fetchedMentorships)
   }
 
-  useEffect(() => {
-    getUsers()
-    getMentorships()
-  }, [])
+  const loadData = async (loggedUser): Promise<void> => {
+    LOGGED_USER_ID = loggedUser.id
+    await getUsers()
+    await getMentorships()
+  }
+
+  useProfileInfo((userInfo) => loadData(userInfo))
 
   const auth: { user: firebase.User | null } = React.useContext(AuthContext)
   const classes = useStyles()
@@ -129,7 +134,7 @@ const SearchMentorsPage = (): JSX.Element => {
     }
     return user.has_skills.map((skill) => `\n - ${skill.name}`).join('')
   }
-  
+
   const filteredUsers = (): Array<any> => {
     return users.filter((user) => {
       if (user.id === LOGGED_USER_ID) {
@@ -147,7 +152,7 @@ const SearchMentorsPage = (): JSX.Element => {
 
   return (
     <div className={classes.pageContainer}>
-      <SideNavigationMenu />
+      <SideNavigationMenu data-testid="SideMenu" />
       <div
         style={{
           display: 'flex',
@@ -178,7 +183,7 @@ const SearchMentorsPage = (): JSX.Element => {
         <div style={{ width: '90%', marginTop: 80 }}>
           <Grid container spacing={8} style={{ backgroundColor: '#855fad', alignSelf: 'center' }}>
             {filteredUsers().map((user) => {
-              if (hasUser(user)) {
+              if (!validUser(user)) {
                 return null
               }
               return (

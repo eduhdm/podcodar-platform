@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen --silent",
     "lint": "eslint --ext js,jsx,ts,tsx src",
     "eject": "react-scripts eject"
   },

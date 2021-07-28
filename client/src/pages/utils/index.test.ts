@@ -1,54 +1,54 @@
-import { getNomeCompleto, getSkills, hasUser } from ".";
+import { getNomeCompleto, getSkills, validUser } from '.'
 
 const mockUser = {
   id: 1,
   first_name: 'teste',
   last_name: 'teste',
-  has_skills: []
+  has_skills: [],
 }
 
 describe('utils functions', () => {
   it('getNomeCompleto returns the name', () => {
-    const nomeCompleto = getNomeCompleto(mockUser);
+    const nomeCompleto = getNomeCompleto(mockUser)
 
     expect(nomeCompleto).toBe('teste teste')
   })
 
   it('getSkills do not returns any skills', () => {
-    const skills = getSkills(mockUser);
+    const skills = getSkills(mockUser)
 
     expect(skills).toBe('- Nenhum ainda...')
   })
 
   it('getSkills returns the skills', () => {
-    const skills = getSkills({ 
+    const skills = getSkills({
       ...mockUser,
-      HasSkills: [{ Skill: { name: 'JavaScript' }}]
-    });
+      HasSkills: [{ Skill: { name: 'JavaScript' } }],
+    })
 
     expect(skills).toBe('\n - JavaScript')
   })
 
-  it('hasUser returns true', () => {
-    const user = hasUser(mockUser)
+  it('validUser returns true', () => {
+    const user = validUser(mockUser)
 
     expect(user).toBeTruthy()
   })
 
-  it('hasUser returns false when there is no id', () => {
-    const user = hasUser({ id: null, first_name: 'teste'})
+  it('validUser returns false when there is no id', () => {
+    const user = validUser({ id: null, first_name: 'teste' })
 
     expect(user).toBeFalsy()
   })
 
-  it('hasUser returns false when there is no first name', () => {
-    const user = hasUser({ id: 1, first_name: null})
+  it('validUser returns false when there is no first name', () => {
+    const user = validUser({ id: 1, first_name: null })
 
     expect(user).toBeFalsy()
   })
 
-  it('hasUser returns false when there is no first name and no id', () => {
-    const user = hasUser({ id: null, first_name: null})
+  it('validUser returns false when there is no first name and no id', () => {
+    const user = validUser({ id: null, first_name: null })
 
     expect(user).toBeFalsy()
   })

@@ -5,8 +5,7 @@ export async function loginFirebase(email: string, password: string): Promise<an
     await firebaseApp.auth().signInWithEmailAndPassword(email, password)
     return true
   } catch (error) {
-    console.log('Error during Firebase SDK Authentication.')
-    console.error(error)
+    console.error('Error during Firebase SDK Authentication.', error)
     return false
   }
 }
@@ -16,8 +15,7 @@ export async function signUpFirebase(email: string, password: string): Promise<a
     const userCredential = await firebaseApp.auth().createUserWithEmailAndPassword(email, password)
     return userCredential
   } catch (error) {
-    console.log('Error during Firebase SDK Authentication.')
-    console.error(error)
+    console.error('Error during Firebase SDK Authentication.', error)
     return false
   }
 }

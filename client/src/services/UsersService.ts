@@ -6,7 +6,7 @@ class UsersService extends BaseService {
   private static instance = new UsersService()
 
   async fetchUsers(): Promise<any> {
-    const response = await this.client.get('users')
+    const response = await this.client.get('users?includeSkills=true')
     return response.data
   }
 
@@ -18,7 +18,7 @@ class UsersService extends BaseService {
 
       return response.data.userId
     } catch (err) {
-      console.log(err)
+      console.error('Error creating user!', err)
     }
 
     return false
@@ -34,7 +34,7 @@ class UsersService extends BaseService {
       const response = await this.client.get(`users/${token}`, { params: options })
       return response.data
     } catch (err) {
-      console.log(err)
+      console.error('Error getting user by token!', err)
     }
 
     return false

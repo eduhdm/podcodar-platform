@@ -25,6 +25,7 @@ function SideNavigationMenu(): JSX.Element {
         flexDirection: 'column',
         justifyContent: 'space-evenly',
       }}
+      data-testid="SideNavigationMenu"
     >
       <div style={{ justifySelf: 'start', paddingBottom: 15 }}>
         <Typography
