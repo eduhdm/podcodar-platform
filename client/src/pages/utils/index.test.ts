@@ -23,7 +23,7 @@ describe('utils functions', () => {
   it('getSkills returns the skills', () => {
     const skills = getSkills({ 
       ...mockUser,
-      has_skills: [{ name: 'JavaScript' }]
+      HasSkills: [{ Skill: { name: 'JavaScript' }}]
     });
 
     expect(skills).toBe('\n - JavaScript')

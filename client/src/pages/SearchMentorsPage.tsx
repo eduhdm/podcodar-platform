@@ -8,7 +8,7 @@ import { AuthContext } from 'components/auth'
 import SideNavigationMenu from 'components/menus'
 import { UsersService, MentorshipsService } from 'services'
 
-import { getNomeCompleto, getSkills, hasUser } from './utils'
+import { getNomeCompleto, hasUser } from './utils'
 
 // CONSTANT FOR TESTING PURPOSES
 const LOGGED_USER_ID = 1
@@ -123,6 +123,13 @@ const SearchMentorsPage = (): JSX.Element => {
     getMentorships()
   }
 
+  const getSkills = (user: any): string => {
+    if (!user.has_skills.length) {
+      return '- Nenhum ainda...'
+    }
+    return user.has_skills.map((skill) => `\n - ${skill.name}`).join('')
+  }
+  
   const filteredUsers = (): Array<any> => {
     return users.filter((user) => {
       if (user.id === LOGGED_USER_ID) {
