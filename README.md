@@ -126,3 +126,8 @@ O sistema está sendo projetado usando o software Figma.
 - Criar tela para visualizar sprint atual e exercícios
 - Criar endpoint que retorna informações da sprint
 - Criar endpoint para marcar exercícios como completos
+
+## Estrutura do banco de dados do sistema no final da Sprint 2
+
+![image](https://user-images.githubusercontent.com/29798601/127712636-2ddc152c-5b77-427a-a9e8-46b0f0424ef9.png)
+
