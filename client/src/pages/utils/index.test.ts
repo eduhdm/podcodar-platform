@@ -21,7 +21,7 @@ describe('utils functions', () => {
   })
 
   it('getSkills returns the skills', () => {
-    const skills = getSkills({ 
+    const skills = getSkills({
       ...mockUser,
       has_skills: [{ name: 'JavaScript' }]
     });
@@ -36,19 +36,19 @@ describe('utils functions', () => {
   })
 
   it('hasUser returns false when there is no id', () => {
-    const user = hasUser({ id: null, first_name: 'teste'})
+    const user = hasUser({ id: null, first_name: 'teste' })
 
     expect(user).toBeFalsy()
   })
 
   it('hasUser returns false when there is no first name', () => {
-    const user = hasUser({ id: 1, first_name: null})
+    const user = hasUser({ id: 1, first_name: null })
 
     expect(user).toBeFalsy()
   })
 
   it('hasUser returns false when there is no first name and no id', () => {
-    const user = hasUser({ id: null, first_name: null})
+    const user = hasUser({ id: null, first_name: null })
 
     expect(user).toBeFalsy()
   })
