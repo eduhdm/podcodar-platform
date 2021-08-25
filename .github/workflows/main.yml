@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,4 +19,5 @@ jobs:
         run: |
           echo "Executando testes..."
           cd client
+          yarn install
           yarn test
