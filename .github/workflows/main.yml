@@ -12,13 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Starting
+      - name: Iniciando CI/CD...
         run: echo "Iniciando execução do pipeline de CI/CD..."
 
-      - name: Run a multi-line script
+      - name: Executando CI...
         run: |
-          echo "Executando testes..."
           cd client
           yarn install
           yarn test
-          git push heroku main
+
+      - name: Execudando CD...
+        run: |
+          git init
+          git remote
+          git remote add client-repository git@github.com:Victorams/podcodar-client.git
+          git remote
+          git push client-repository main
