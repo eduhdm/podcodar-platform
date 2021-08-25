@@ -14,7 +14,7 @@ describe('ProfilePage', () => {
   it('render perfil text', () => {
     const { getByText } = render(<ProfilePage />)
 
-    expect(getByText('Perfil Testando', { selector: 'h2' })).toBeInTheDocument()
+    expect(getByText('Perfil', { selector: 'h2' })).toBeInTheDocument()
   })
 
   it('render the loading text', () => {
