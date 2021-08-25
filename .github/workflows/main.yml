@@ -15,16 +15,8 @@ jobs:
       - name: Iniciando CI/CD...
         run: echo "Iniciando execução do pipeline de CI/CD..."
 
-      - name: Executando CI...
+      - name: Executando CICD...
         run: |
           cd client
           yarn install
           yarn test
-
-      - name: Execudando CD...
-        run: |
-          git init
-          git remote
-          git remote add client-repository git@github.com:Victorams/podcodar-client.git
-          git remote
-          git push client-repository main
