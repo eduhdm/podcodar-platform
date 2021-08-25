@@ -26,7 +26,8 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "baseUrl": "./src",
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": [
     "node_modules",
